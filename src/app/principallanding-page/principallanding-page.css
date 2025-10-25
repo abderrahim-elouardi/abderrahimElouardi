@@ -1,0 +1,35 @@
+#image_id {
+    width: 225px;
+
+}
+
+#row1_id {
+    display: flex;
+    justify-content: center;
+}
+
+#img-container {
+    width: 325px;
+    height: 325px;
+    /* background: #c7ddf0; */
+    background: linear-gradient(90deg, rgba(199, 221, 240, 1) 0%, rgba(189, 201, 195, 1) 50%, rgba(252, 250, 250, 0.29) 100%);
+    box-shadow: 26px -24px 20px aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px 10px 90px 0px
+}
+
+#containner_id {
+    height: 100px;
+}
+
+#salutation-id {
+    font-size: 32px;
+}
+
+#titre-id {
+    font-size: 32px;
+    font-family: "Georgia", serif;
+    color: #4D9DBF;
+}
