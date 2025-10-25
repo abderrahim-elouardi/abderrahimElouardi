@@ -1,4 +1,4 @@
-#image_id {
+#image_id1 {
     width: 225px;
 
 }
@@ -32,4 +32,10 @@
     font-size: 32px;
     font-family: "Georgia", serif;
     color: #4D9DBF;
+}
+
+#titreSecondSection {
+    font-size: 32px;
+    font-family: "Georgia", serif;
+    text-align: center;
 }

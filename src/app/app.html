@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
-<router-outlet />
+<div class="general" [ngClass]="{'bgnuitmode':this.mode.nuitMode,'bgnotnuitmode':!this.mode.nuitMode}">
+  <app-navbar></app-navbar>
+  <router-outlet />
+</div>
