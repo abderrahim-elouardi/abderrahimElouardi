@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NuitmodeService {
-  nuitMode: boolean = true
+  nuitMode: boolean = false
 }

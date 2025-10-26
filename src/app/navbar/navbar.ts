@@ -4,7 +4,7 @@ import { NuitmodeService } from '../nuitmode/nuitmode-service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgIf],
+  imports: [],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
