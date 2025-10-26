@@ -1,4 +1,3 @@
-<div class="general" [ngClass]="{'bgnuitmode':this.mode.nuitMode,'bgnotnuitmode':!this.mode.nuitMode}">
-  <app-navbar></app-navbar>
+<div class="general" [ngClass]="{'bgnuitmode':this.config.mode,'bgnotnuitmode':!this.config.mode}">
   <router-outlet />
 </div>

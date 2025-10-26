@@ -1,6 +1,5 @@
-import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { NuitmodeService } from '../nuitmode/nuitmode-service';
+import { CongfigurationService } from '../configuration/congfiguration-service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +8,8 @@ import { NuitmodeService } from '../nuitmode/nuitmode-service';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  mode = inject(NuitmodeService)
+  config = inject(CongfigurationService)
   basculer() {
-    this.mode.nuitMode = !this.mode.nuitMode
+    this.config.mode = !this.config.mode
   }
 }
