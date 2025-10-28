@@ -36,19 +36,26 @@
             <div class="d-flex align-items-center gap-3 flex-wrap">
                 <!-- Language buttons -->
                 <div class="language-buttons">
-                    <button class="btn btn-outline-primary btn-lang active" data-lang="fr" title="Français">
+                    <button class="btn btn-outline-primary btn-lang " [ngClass]="{
+                        'active':config.longue=='FR'
+                    }" data-lang="fr" title="Français" (click)="this.basculerFr()">
                         FR
                     </button>
-                    <button class="btn btn-outline-primary btn-lang" data-lang="en" title="English">
+                    <button class="btn btn-outline-primary btn-lang" data-lang="en" title="English" [ngClass]="{
+                        'active':config.longue=='EN'
+                    }" (click)="this.basculerEng()">
                         EN
                     </button>
-                    <button class="btn btn-outline-primary btn-lang" data-lang="ar" title="العربية">
+                    <button class="btn btn-outline-primary btn-lang" data-lang="ar" title="العربية" [ngClass]="{
+                        'active':config.longue=='AR'
+                    }" (click)="this.basculerAr()">
                         AR
                     </button>
                 </div>
 
                 <!-- Theme toggle button -->
-                <button class="btn btn-outline-secondary theme-toggle" id="themeToggle" title="Mode nuit">
+                <button class="btn btn-outline-secondary theme-toggle" id="themeToggle" title="Mode nuit"
+                    (click)="this.changeMode()">
                     <i class="bi bi-moon-stars"></i>
                 </button>
             </div>
@@ -62,16 +69,21 @@
         </div>
     </div>
     <div class="row mt-3 bg-body-primary">
-        <p class="text-center" id="salutation-id">salut ! je suis {{this.francais_nom}} 👋🏼</p>
+        <p class="text-center" id="salutation-id"
+            [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">salut ! je suis
+            {{this.francais_nom}} 👋🏼</p>
         <p class="text-center" id="titre-id">{{this.francais_titre}}</p>
-        <p class="text-center">{{this.francais_introduction}}</p>
+        <p class="text-center" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+            {{this.francais_introduction}}</p>
     </div>
     <div class="row mt-5 ">
-        <p id="titreSecondSection">À propos de moi</p>
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">À propos de
+            moi</p>
         <div class="col-lg-4 col-sm-12 order-lg-1 order-md-2 bg-body-primary">
             <img [src]="this.image2" class="w-75 text-center" alt="" srcset="">
         </div>
-        <div class=" col-lg-8 col-sm-12 order-lg-2 order-md-1">
+        <div class=" col-lg-8 col-sm-12 order-lg-2 order-md-1"
+            [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
             {{this.francais_introduction_Detaille}}
         </div>
     </div>

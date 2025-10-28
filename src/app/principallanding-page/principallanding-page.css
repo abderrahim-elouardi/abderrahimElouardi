@@ -94,11 +94,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 90px 10px 90px 0px
+    border-radius: 90px 10px 90px 0px;
+    animation: imgContainer 1s ease-in-out 0s infinite alternate forwards;
+}
+
+@keyframes imgContainer {
+    0% {
+        border-radius: 90px 10px 90px 0px;
+    }
+
+    /* Étape 2 : Milieu de l'animation (50% de la durée) */
+    50% {
+        border-radius: 45px 45px 45px 45px;
+
+    }
+
+    /* Étape 3 : Fin de l'animation (100% de la durée) */
+    100% {
+        border-radius: 10px 90px 0px 90px;
+
+    }
+
 }
 
 #containner_id {
     height: 100px;
+    margin-top: -19px;
 }
 
 #salutation-id {

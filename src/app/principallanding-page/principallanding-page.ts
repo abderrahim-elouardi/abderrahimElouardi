@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
+import { CongfigurationService } from '../configuration/congfiguration-service';
+import { TitleStrategy } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-principallanding-page',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './principallanding-page.html',
   styleUrl: './principallanding-page.css',
 })
@@ -15,5 +18,21 @@ export class PrincipallandingPage {
   image1 = "myImages/myPhoto1.jpg"
   image2 = "myImages/myPhoto2.jpg"
 
+  config = inject(CongfigurationService)
 
+
+  basculerEng() {
+    this.config.longue = "EN"
+  }
+
+  basculerFr() {
+    this.config.longue = "FR"
+  }
+  basculerAr() {
+    this.config.longue = "Ar"
+
+  }
+  changeMode() {
+    this.config.mode = !this.config.mode
+  }
 }
