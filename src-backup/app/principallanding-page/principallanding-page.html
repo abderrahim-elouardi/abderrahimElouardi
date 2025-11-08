@@ -89,7 +89,7 @@
     </div>
 
     <div class="row mt-5" id="projectsSection">
-        @for (projet of this.projects ; track projet.id ) {
+        @for (projet of this.data.projects;track projet.id) {
         <div class="col-lg-3 projet">
             <app-projet [projet]="projet"></app-projet>
         </div>

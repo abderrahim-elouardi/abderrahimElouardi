@@ -3,12 +3,11 @@ import { CongfigurationService } from '../configuration/congfiguration-service';
 import { DataService } from '../dataService/data-service';
 import { ProjetEntite } from '../Entities/ProjetEntite';
 import { Projet } from '../projet/projet';
-import { CommonModule, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-principallanding-page',
-  imports: [CommonModule, NgClass, Projet],
-  standalone: true,
+  imports: [NgClass, Projet],
   templateUrl: './principallanding-page.html',
   styleUrl: './principallanding-page.css',
 })
@@ -27,7 +26,7 @@ export class PrincipallandingPage {
   projects: ProjetEntite[] = []
 
   constructor() {
-    this.projects = this.data.projects
+    // this.projects = this.data.projects
   }
 
   basculerEng() {
