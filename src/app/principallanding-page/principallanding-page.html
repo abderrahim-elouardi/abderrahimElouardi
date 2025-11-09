@@ -16,19 +16,20 @@
             <!-- Navigation links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#about">À propos de moi</a>
+                    <a class="nav-link active" aria-current="page" href="#proposMoi"> <i class="bi bi-person-fill"></i>
+                        À propos de moi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#education">Éducation</a>
+                    <a class="nav-link" href="#education"> <i class="bi bi-book-fill"></i> Éducation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills">Compétences</a>
+                    <a class="nav-link" href="#skills"> <i class="bi bi-stars"></i> Compétences</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projets</a>
+                    <a class="nav-link" href="#projectsSection"> <i class="bi bi-trello"></i>Projets</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact"> <i class="bi bi-person-lines-fill"></i> Contact</a>
                 </li>
             </ul>
 
@@ -68,15 +69,29 @@
             <img class="rounded-5" [src]="this.image1" id="image_id1" alt="Ma photo">
         </div>
     </div>
-    <div class="row mt-3 bg-body-primary">
+    <div class="row mt-3 bg-body-primary" id="proposMoi">
         <p class="text-center" id="salutation-id"
             [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">salut ! je suis
             {{this.francais_nom}} 👋🏼</p>
         <p class="text-center" id="titre-id">{{this.francais_titre}}</p>
         <p class="text-center" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
             {{this.francais_introduction}}</p>
+        <div id="cvDiv">
+            <div>
+                <button type="button" class="btn btn-info">
+                    Telecharger
+                    <i class="bi bi-arrow-bar-right"></i>
+                </button>
+                <button type="button" class="btn btn-warning">
+                    <a href="CV.pdf" download="ABDERRAHIM EL OUARDI" style="text-decoration: none;">
+                        CV
+                    </a>
+                </button>
+            </div>
+
+        </div>
     </div>
-    <div class="row mt-5 ">
+    <!-- <div class="row mt-5 ">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">À propos de
             moi</p>
         <div class="col-lg-4 col-sm-12 order-lg-1 order-md-2 bg-body-primary">
@@ -86,12 +101,14 @@
             [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
             {{this.francais_introduction_Detaille}}
         </div>
-    </div>
+    </div> -->
 
     <div class="row mt-5" id="projectsSection">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes Projets
+        </p>
         @for (projet of this.projects ; track projet.id ) {
-        <div class="col-lg-3 projet">
-            <app-projet [projet]="projet"></app-projet>
+        <div class="col-lg-5 projet mt-5">
+            <app-projet [projet]=" projet"></app-projet>
         </div>
         }
 

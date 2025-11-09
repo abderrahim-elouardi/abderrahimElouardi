@@ -1,14 +1,16 @@
-<div class="card shadow-sm h-100">
+<div class="card shadow-sm h-100" [ngClass]="{'bg-light':!this.config.mode,'cardClassModenuit':this.config.mode}"
+    id="cardId">
     <!-- Image en haut -->
-    <!-- <img [src]="this.projet.img" [alt]="this.projet?.titre" class="card-img-top"> -->
+    <img [src]="this.projet.img" [alt]="this.projet.titre" class="card-img-top">
 
     <!-- Corps de la carte -->
     <div class="card-body">
         <!-- Titre du projet -->
-        <h5 class="card-title">{{this.projet.titre}}</h5>
+        <h5 class="card-title" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+            {{this.projet.titre}}</h5>
 
         <!-- Description du projet -->
-        <p class="card-text">
+        <p class="card-text" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
             {{this.projet.description}}
         </p>
     </div>
