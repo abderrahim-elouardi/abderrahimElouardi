@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProjetEntite } from '../Entities/ProjetEntite';
+import { Education } from '../Entities/Education';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,30 @@ export class DataService {
       }
       ],
       technologies: []
+    }
+  ]
+
+  Educations: Education[] = [
+    {
+      id: 1,
+      cycle: "Cycle Master",
+      location: "FSDM ,FES",
+      date: "2025 - 2027",
+      title: "Web Intelligence et Science de Donnees"
+    },
+    {
+      id: 2,
+      cycle: "Cycle Licence",
+      location: "FSDM ,FES",
+      date: "2022 - 2025",
+      title: "Science Mathematique et informatique"
+    },
+    {
+      id: 3,
+      cycle: "Baccalaureat ",
+      location: "Lycee Al Amal ,FES",
+      date: "2021 - 2022",
+      title: "Physique - Chimie"
     }
   ]
 

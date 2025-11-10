@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CongfigurationService } from '../configuration/congfiguration-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [CommonModule],
+  standalone: true,
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })

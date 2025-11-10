@@ -4,10 +4,13 @@ import { DataService } from '../dataService/data-service';
 import { ProjetEntite } from '../Entities/ProjetEntite';
 import { Projet } from '../projet/projet';
 import { CommonModule, NgClass } from '@angular/common';
+import { EducationCard } from '../education-card/education-card';
+import { EducationRow } from "../education-row/education-row";
+import { Education } from '../Entities/Education';
 
 @Component({
   selector: 'app-principallanding-page',
-  imports: [CommonModule, NgClass, Projet],
+  imports: [CommonModule, NgClass, Projet, EducationRow],
   standalone: true,
   templateUrl: './principallanding-page.html',
   styleUrl: './principallanding-page.css',
@@ -25,10 +28,13 @@ export class PrincipallandingPage {
   config = inject(CongfigurationService)
   data = inject(DataService)
 
+
   projects: ProjetEntite[] = []
+  educations: Education[] = []
 
   constructor() {
     this.projects = this.data.projects
+    this.educations = this.data.Educations
   }
 
   basculerEng() {

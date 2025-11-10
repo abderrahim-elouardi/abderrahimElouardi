@@ -1,0 +1,13 @@
+<div class="row rowid" id="">
+    <div class="col-lg-5 col-md-12">
+        <app-education-card *ngIf="this.education.id%2!=0" [education]="this.education"></app-education-card>
+    </div>
+    <div class="col-sm-2 d-sm-none sepContainer">
+        <div class="sep">
+            <div class="ballon"></div>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-0">
+        <app-education-card *ngIf="this.education.id%2==0" [education]="this.education"></app-education-card>
+    </div>
+</div>

@@ -107,11 +107,32 @@
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes Projets
         </p>
         @for (projet of this.projects ; track projet.id ) {
-        <div class="col-lg-5 projet mt-5">
+        <div class="col-lg-5 col-md-5 projet mt-5">
             <app-projet [projet]=" projet"></app-projet>
         </div>
         }
 
+    </div>
+
+    <div class="row mt-5 p-3" id="row4id">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Education
+        </p>
+        @for (education of this.educations; track education.id) {
+        <app-education-row [education]="education"></app-education-row>
+        }
+
+
+
+
+        <!-- <div class="row rowid" id="">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2 sepContainer">
+                <div class="sep">
+                    <div class="ballon"></div>
+                </div>
+            </div>
+            <div class="col-lg-5"></div>
+        </div> -->
     </div>
 
 
