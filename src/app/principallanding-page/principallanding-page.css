@@ -167,7 +167,37 @@ body {
     justify-content: space-around;
 }
 
-#row4id {
+.row4 {
     height: 1000px;
+    border-radius: 12px;
+    background-color: #f1f0f5;
+}
+
+.row4nuit {
+    height: 1000px;
+    border-radius: 12px;
+    background-color: #1a1a1d;
+}
+
+/* .education {
     background-color: antiquewhite;
+} */
+
+.educationRow {
+    display: flex;
+    justify-content: space-around;
+}
+
+#education {
+    border: solid 3px lightblue;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+#educationParagraphe {
+    text-align: center;
+}
+
+footer {
+    margin-top: 3000px;
 }

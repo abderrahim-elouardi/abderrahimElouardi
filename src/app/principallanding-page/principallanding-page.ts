@@ -4,13 +4,12 @@ import { DataService } from '../dataService/data-service';
 import { ProjetEntite } from '../Entities/ProjetEntite';
 import { Projet } from '../projet/projet';
 import { CommonModule, NgClass } from '@angular/common';
-import { EducationCard } from '../education-card/education-card';
-import { EducationRow } from "../education-row/education-row";
 import { Education } from '../Entities/Education';
+import { CardEducation } from '../card-education/card-education';
 
 @Component({
   selector: 'app-principallanding-page',
-  imports: [CommonModule, NgClass, Projet, EducationRow],
+  imports: [CommonModule, NgClass, Projet, CardEducation],
   standalone: true,
   templateUrl: './principallanding-page.html',
   styleUrl: './principallanding-page.css',

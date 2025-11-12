@@ -1,0 +1,24 @@
+#imgStyle {
+    width: 64px;
+}
+
+#imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#titreStyle {
+    font-weight: 700;
+
+}
+
+#cycleStyle {
+    text-align: center;
+    font-style: oblique;
+    font-size: x-large;
+}
+
+#cart {
+    background-color: aliceblue;
+}
