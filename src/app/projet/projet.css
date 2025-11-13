@@ -1,7 +1,12 @@
 #cardId {
-    height: 450px !important;
+    border-radius: 19px;
+
 }
 
 .cardClassModenuit {
     background-color: #66687a42;
+}
+
+#imgCard {
+    border-radius: 19px 19px 0px 0px;
 }

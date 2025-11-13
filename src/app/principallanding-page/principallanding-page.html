@@ -91,7 +91,24 @@
 
         </div>
     </div>
-    <div class="row mt-5" id="projectsSection">
+
+    <div class="row mt-5 education  section mb-5">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Education
+        </p>
+        <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mon
+            parcours académique a établi les fondations techniques et méthodologiques de mon
+            expertise</p>
+
+        <div class="row educationRow mb-4 ">
+            @for (education of this.educations; track education.id) {
+            <div class="col-lg-5 col-md-12 mt-3" id="education">
+                <app-card-education [education]="education"></app-card-education>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="row mt-5 section pb-4 h-auto" id="projectsSection">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes Projets
         </p>
         @for (projet of this.projects ; track projet.id ) {
@@ -101,20 +118,7 @@
         }
 
     </div>
-    <div class="row mt-5 education  ">
-        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Education
-        </p>
-        <p id="educationParagraphe">Mon parcours académique a établi les fondations techniques et méthodologiques de mon
-            expertise</p>
 
-        <div class="row educationRow">
-            @for (education of this.educations; track education.id) {
-            <div class="col-5 mt-3" id="education">
-                <app-card-education [education]="education"></app-card-education>
-            </div>
-            }
-        </div>
-    </div>
 
 
 

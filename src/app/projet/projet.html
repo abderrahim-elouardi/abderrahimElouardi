@@ -1,7 +1,7 @@
-<div class="card shadow-sm h-100" [ngClass]="{'bg-light':!this.config.mode,'cardClassModenuit':this.config.mode}"
+<div class="card shadow-sm h-100 h-auto" [ngClass]="{'bg-light':!this.config.mode,'cardClassModenuit':this.config.mode}"
     id="cardId">
     <!-- Image en haut -->
-    <img [src]="this.projet.img" [alt]="this.projet.titre" class="card-img-top">
+    <img [src]="this.projet.img" [alt]="this.projet.titre" class="card-img-top " id="imgCard">
 
     <!-- Corps de la carte -->
     <div class="card-body">
