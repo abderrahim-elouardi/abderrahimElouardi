@@ -363,8 +363,17 @@
     </div>
 
     <div class="row marginnnn pb-4 h-auto" id="projectsSection" [ngClass]="{'section':this.config.mode}">
-        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='FR'">Mes
             Projets
+        </p>
+
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='EN'">My Projects
+        </p>
+
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='Ar'">مشاريعي
         </p>
         @for (projet of this.projects ; track projet.id ) {
         <div class="col-lg-5 col-md-5 projet mt-5">
@@ -403,7 +412,9 @@
 
                 <!-- Column 2: Contact Form -->
                 <div class="col-md-6">
-                    <h5 class="fw-bold mb-4">Contact Me</h5>
+                    <h5 class="fw-bold mb-4" *ngIf="this.config.longue=='EN'">Contact Me</h5>
+                    <h5 class="fw-bold mb-4" *ngIf="this.config.longue=='FR'">Contacter Moi</h5>
+                    <h5 class="fw-bold mb-4" *ngIf="this.config.longue=='Ar'">تواصل معي</h5>
 
                     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
@@ -422,8 +433,17 @@
                                 [(ngModel)]="model.message" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">
+                        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid"
+                            *ngIf="this.config.longue=='EN'">
                             Send Message
+                        </button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid"
+                            *ngIf="this.config.longue=='FR'">
+                            Envoyer message
+                        </button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid"
+                            *ngIf="this.config.longue=='Ar'">
+                            إرسال
                         </button>
                     </form>
                 </div>
