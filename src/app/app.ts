@@ -11,7 +11,7 @@ import { CongfigurationService } from './configuration/congfiguration-service';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  protected readonly title = signal('Abderrahim El ouardi');
   config = inject(CongfigurationService)
 
 }
