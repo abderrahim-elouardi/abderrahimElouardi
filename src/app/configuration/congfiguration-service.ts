@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class CongfigurationService {
   mode: boolean = false
-  longue: string = "anglais"
+  longue: string = "EN"
+  skill: string = "Languages"
 }

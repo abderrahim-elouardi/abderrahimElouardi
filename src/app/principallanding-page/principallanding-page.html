@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg position-fixed" id="navbar_id">
     <div class="container-fluid">
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#" *ngIf="this.config.longue=='FR'||this.config.longue=='EN'">
             <i class="bi bi-briefcase"></i> Abderrahim El Ouardi
+        </a>
+        <a class="navbar-brand" href="#" *ngIf="this.config.longue=='Ar'">
+            <i class="bi bi-briefcase"></i> عبد الرحيم الوردي
         </a>
 
         <!-- Toggler for mobile -->
@@ -14,7 +17,7 @@
         <!-- Navbar content -->
         <div class="collapse navbar-collapse" id="navbarContent">
             <!-- Navigation links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="this.config.longue=='FR'">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#proposMoi"> <i class="bi bi-person-fill"></i>
                         À propos de moi</a>
@@ -27,6 +30,45 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#projectsSection"> <i class="bi bi-trello"></i>Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"> <i class="bi bi-person-lines-fill"></i> Contact</a>
+                </li>
+            </ul>
+
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="this.config.longue=='Ar'">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#proposMoi"> <i class="bi bi-person-fill"></i>
+                        عني</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education"> <i class="bi bi-book-fill"></i> التعليم</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills"> <i class="bi bi-stars"></i> القدرات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projectsSection"> <i class="bi bi-trello"></i>المشاريع</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"> <i class="bi bi-person-lines-fill"></i> تواصل</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="this.config.longue=='EN'">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#proposMoi"> <i class="bi bi-person-fill"></i>
+                        About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education"> <i class="bi bi-book-fill"></i> Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills"> <i class="bi bi-stars"></i> SKills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projectsSection"> <i class="bi bi-trello"></i>Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact"> <i class="bi bi-person-lines-fill"></i> Contact</a>
@@ -70,16 +112,46 @@
         </div>
     </div>
     <div class="row mt-3 bg-body-primary" id="proposMoi">
-        <p class="text-center" id="salutation-id"
+        <p class="text-center" id="salutation-id" *ngIf="this.config.longue=='FR'"
             [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">salut ! je suis
             {{this.francais_nom}} 👋🏼</p>
-        <p class="text-center" id="titre-id">{{this.francais_titre}}</p>
-        <p class="text-center" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+        <p class="text-center" id="salutation-id" *ngIf="this.config.longue=='EN'"
+            [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Hi ! I'm
+            {{this.francais_nom}} 👋🏼</p>
+        <p class="text-center" id="salutation-id" *ngIf="this.config.longue=='Ar'"
+            [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">مرحبا ! انا
+            {{this.arabe_nom}} 👋🏼</p>
+
+
+        <p class="text-center" id="titre-id" *ngIf="this.config.longue=='FR'">
+            {{this.francais_titre}}</p>
+        <p class="text-center" id="titre-id" *ngIf="this.config.longue=='EN'">
+            {{this.anglais_titre}}</p>
+        <p class="text-center" id="titre-id" *ngIf="this.config.longue=='Ar'">{{this.arabe_titre}}</p>
+
+        <p class="text-center" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='FR'">
             {{this.francais_introduction}}</p>
+        <p class="text-center" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='EN'">
+            {{this.anglais_introduction}}</p>
+        <p class="text-center" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='Ar'">
+            {{this.arabe_instroduction}}</p>
         <div id="cvDiv">
             <div>
-                <button type="button" class="btn btn-info">
-                    Telecharger
+                <button type="button" class="btn btn-info" *ngIf="this.config.longue=='FR'">
+                    Contacter Moi
+                    <i class="bi bi-arrow-bar-right"></i>
+                </button>
+
+                <button type="button" class="btn btn-info" *ngIf="this.config.longue=='EN'">
+                    Contact Me
+                    <i class="bi bi-arrow-bar-right"></i>
+                </button>
+
+                <button type="button" class="btn btn-info" *ngIf="this.config.longue=='Ar'">
+                    تواصل معي
                     <i class="bi bi-arrow-bar-right"></i>
                 </button>
                 <button type="button" class="btn btn-warning">
@@ -92,13 +164,34 @@
         </div>
     </div>
 
-    <div class="row mt-5 education  section mb-5">
-        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Education
+    <div class="row mt-5 education   mb-5" [ngClass]="{'section':this.config.mode}">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='FR'">Éducation
         </p>
-        <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mon
+
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='EN'">Education
+        </p>
+
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='Ar'">التعليم
+        </p>
+
+        <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='FR'">Mon
             parcours académique a établi les fondations techniques et méthodologiques de mon
             expertise</p>
 
+        <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='Ar'">Mon
+            parcours académique a établi les fondations techniques et méthodologiques de mon
+            expertise</p>
+
+        <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='EN'">Mon
+            parcours académique a établi les fondations techniques et méthodologiques de mon
+            expertise</p>
+        <!-- ////////////////////// -->
         <div class="row educationRow mb-4 ">
             @for (education of this.educations; track education.id) {
             <div class="col-lg-5 col-md-12 mt-3" id="education">
@@ -108,8 +201,99 @@
         </div>
     </div>
 
-    <div class="row mt-5 section pb-4 h-auto" id="projectsSection">
-        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes Projets
+    <div class="row mt-5 education   mb-5" [ngClass]="{'section':this.config.mode}" id="skills">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Compétences
+        </p>
+        <div class="row p-4" id="competenceRow">
+            <div class="row p-4 d-flex justify-content-around align-items-center">
+                <div class="col-lg-2 ">
+                    <button class=" btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Languages','btn-primary':this.config.skill=='Languages'}"
+                        (click)="basculerLanguages()">
+                        Languages
+                    </button>
+                </div>
+                <div class="col-lg-2 ">
+                    <button class="btn  comButton fs-3"
+                        [ngClass]="{'btn-light':this.config.skill!='Database','btn-primary':this.config.skill=='Database'}"
+                        (click)="basculerDatabase()">
+                        Database
+                    </button>
+                </div>
+                <div class="col-lg-2 ">
+                    <button class="btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Freamwork','btn-primary':this.config.skill=='Freamwork'}"
+                        (click)="basculerFreamwork()">
+                        Freamwork
+                    </button>
+                </div>
+                <div class="col-lg-2 ">
+                    <button class="btn ai comButton fs-3"
+                        [ngClass]="{'btn-light':this.config.skill!='AI','btn-primary':this.config.skill=='AI'}"
+                        (click)="basculerAi()">
+                        AI
+                    </button>
+                </div>
+                <div class="col-lg-2 ">
+                    <button class="btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Tools','btn-primary':this.config.skill=='Tools'}"
+                        (click)="basculerTools()">
+                        Tools
+                    </button>
+                </div>
+
+            </div>
+            <div class="row p-4 d-flex justify-content-center" *ngIf="this.config.skill=='Languages'">
+                @for (lang of this.Languages; track lang.id) {
+                <div class="col-lg-3 col-md-4 mt-3">
+                    <button class="btn btn-outline-secondary comButton fs-3 "><i class="bi bi-chevron-left"></i><i
+                            class="bi bi-chevron-right"></i>{{lang.name}}</button>
+                </div>
+                }
+            </div>
+
+            <div class="row p-4 d-flex justify-content-center" *ngIf="this.config.skill=='Database'">
+                @for (database of this.Database; track database.id) {
+                <div class="col-lg-3 col-md-4 mt-3">
+                    <button class="btn btn-outline-secondary comButton fs-3 "><i class="bi bi-chevron-left"></i><i
+                            class="bi bi-chevron-right"></i>{{database.name}}</button>
+                </div>
+                }
+            </div>
+
+            <div class="row p-4 d-flex justify-content-center" *ngIf="this.config.skill=='Freamwork'">
+                @for (frem of this.Freamwork; track frem.id) {
+                <div class="col-lg-3 col-md-4 mt-3">
+                    <button class="btn btn-outline-secondary comButton fs-3 "><i class="bi bi-chevron-left"></i><i
+                            class="bi bi-chevron-right"></i>{{frem.name}}</button>
+                </div>
+                }
+            </div>
+
+            <div class="row p-4 d-flex justify-content-center" *ngIf="this.config.skill=='AI'">
+                @for (ai of this.AI; track ai.id) {
+                <div class="col-lg-3 col-md-4 mt-3">
+                    <button class="btn btn-outline-secondary comButton fs-3 "><i class="bi bi-chevron-left"></i><i
+                            class="bi bi-chevron-right"></i>{{ai.name}}</button>
+                </div>
+                }
+            </div>
+
+            <div class="row p-4 d-flex justify-content-center" *ngIf="this.config.skill=='Tools'">
+                @for (tool of this.Tools; track tool.id) {
+                <div class="col-lg-3 col-md-4 mt-3">
+                    <button class="btn btn-outline-secondary comButton fs-3 "><i class="bi bi-chevron-left"></i><i
+                            class="bi bi-chevron-right"></i>{{tool.name}}</button>
+                </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-5 pb-4 h-auto" id="projectsSection" [ngClass]="{'section':this.config.mode}">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes
+            Projets
         </p>
         @for (projet of this.projects ; track projet.id ) {
         <div class="col-lg-5 col-md-5 projet mt-5">
@@ -118,78 +302,60 @@
         }
 
     </div>
+    <footer class="bg-dark text-white py-5" id="contact">
+        <div class="container">
+            <div class="row g-4">
 
+                <!-- Column 1: Contact Information -->
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-4">Contact Information</h5>
 
+                    <!-- Email Link -->
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope text-white me-3"></i>
+                        <a href="elouardiabderrahim06@gmail.com"
+                            class="text-white text-decoration-none">elouardiabderrahim06@gmail.com</a>
+                    </div>
 
+                    <!-- LinkedIn Link -->
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-linkedin text-white me-3"></i>
+                        <a href="https://www.linkedin.com/in/abderrahimelouardi/" target="_blank"
+                            class="text-white text-decoration-none">www.linkedin.com/in/abderrahimelouardi</a>
+                    </div>
 
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-telephone-fill text-white me-3"></i>
+                        <a href="" class="text-white text-decoration-none">+212 676881260</a>
+                    </div>
+                </div>
 
+                <!-- Column 2: Contact Form -->
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-4">Contact Me</h5>
 
+                    <form id="contactForm" action="https://formspree.io/f/xananygp" method="POST">
+                        <!-- Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
 
+                        <!-- Email Input -->
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
 
+                        <!-- Message Textarea -->
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
+                        </div>
 
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
 
-
-
-
-
-
-
-    <!-- <div class="row mt-4">
-        <div class="col-lg-6 order-lg-1 order-sm-2 col bg-body-primary">
-
+            </div>
         </div>
-        <div class="col-lg-6 order-lg-2 order-sm-1 col-sm-10 bg-body-tertiary">gggggggg</div>
-    </div> -->
-
+    </footer>
 </div>
-<footer class="bg-dark text-white py-5">
-    <div class="container">
-        <div class="row g-4">
-
-            <!-- Column 1: Contact Information -->
-            <div class="col-md-6">
-                <h5 class="fw-bold mb-4">Contact Information</h5>
-
-                <!-- Email Link -->
-                <div class="d-flex align-items-center mb-3">
-                    <i class="bi bi-envelope text-white me-3"></i>
-                    <a href="mailto:your.email@example.com"
-                        class="text-white text-decoration-none">your.email@example.com</a>
-                </div>
-
-                <!-- LinkedIn Link -->
-                <div class="d-flex align-items-center">
-                    <i class="bi bi-linkedin text-white me-3"></i>
-                    <a href="https://linkedin.com/in/yourname" target="_blank"
-                        class="text-white text-decoration-none">linkedin.com/in/yourname</a>
-                </div>
-            </div>
-
-            <!-- Column 2: Contact Form -->
-            <div class="col-md-6">
-                <h5 class="fw-bold mb-4">Contact Me</h5>
-
-                <form id="contactForm" action="https://formspree.io/f/xananygp" method="POST">
-                    <!-- Name Input -->
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Your Name">
-                    </div>
-
-                    <!-- Email Input -->
-                    <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Your Email">
-                    </div>
-
-                    <!-- Message Textarea -->
-                    <div class="mb-3">
-                        <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</footer>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProjetEntite } from '../Entities/ProjetEntite';
 import { Education } from '../Entities/Education';
+import { Technologie } from '../Entities/Technologie';
 
 @Injectable({
   providedIn: 'root'
@@ -84,6 +85,135 @@ export class DataService {
       title: "Physique - Chimie"
     }
   ]
+
+  Languages: Technologie[] = [
+    {
+      id: 1,
+      img: "outilsFolder/java.png",
+      name: "Java",
+      version: "17"
+    },
+    {
+      id: 2,
+      img: "outilsFolder/python.png",
+      name: "Python",
+      version: "3"
+    },
+    {
+      id: 3,
+      img: '',
+      name: "C",
+      version: ""
+    },
+    {
+      id: 3,
+      img: '',
+      name: "JS",
+      version: ""
+    },
+    {
+      id: 3,
+      img: '',
+      name: "TS",
+      version: ""
+    },
+    {
+      id: 3,
+      img: '',
+      name: "PHP",
+      version: ""
+    },
+  ]
+
+  Database: Technologie[] = [
+    {
+      id: 1,
+      img: '',
+      name: 'Oracl',
+      version: "21c"
+    },
+    {
+      id: 2,
+      img: "",
+      name: "MySql",
+      version: ""
+    }
+  ]
+  Freamwork: Technologie[] = [
+    {
+      id: 1,
+      img: '',
+      name: "Spring Boot",
+      version: ''
+    },
+    {
+      id: 2,
+      img: "",
+      name: "Angular",
+      version: "20"
+    },
+    {
+      id: 3,
+      img: "",
+      name: "Fast Api",
+      version: ""
+    },
+    {
+      id: 4,
+      img: "",
+      name: "React Js",
+      version: ""
+    },
+    {
+      id: 5,
+      img: "",
+      name: "Next Js",
+      version: ""
+    },
+    {
+      id: 6,
+      img: "",
+      name: "Bootstrap",
+      version: ""
+    },
+    {
+      id: 7,
+      img: "",
+      name: "Tailwind",
+      version: ""
+    }
+  ]
+
+  AI: Technologie[] = [
+    {
+      id: 1,
+      img: "",
+      name: "Scikit-learn",
+      version: ""
+    }
+  ]
+
+  Tools: Technologie[] = [
+    {
+      id: 1,
+      img: "",
+      name: "Git",
+      version: ""
+    },
+    {
+      id: 2,
+      img: "",
+      name: "Postman",
+      version: ""
+    },
+    {
+      id: 3,
+      name: "Githup",
+      img: "",
+      version: ""
+    }
+  ]
+
 
 
 }

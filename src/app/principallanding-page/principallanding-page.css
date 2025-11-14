@@ -199,11 +199,52 @@ body {
 }
 
 footer {
-    margin-top: 3000px;
+    border-radius: 26px;
 }
 
 .section {
     background-color: #2b373d36;
     border-radius: 10px;
 
+}
+
+#competenceRow {
+    height: auto;
+    border-radius: 40px;
+
+    animation-name: competenceRowAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    background-position: 100% 0;
+
+}
+
+@keyframes competenceRowAnimation {
+    0% {
+        background: linear-gradient(45deg, #38C2BD 0%, #31CC72 50%, #72D2ED 100%);
+    }
+
+    50% {
+        background: linear-gradient(to bottom, #38C2BD 0%, #31CC72 50%, #72D2ED 100%);
+    }
+
+    100% {
+        background: linear-gradient(90deg, #38C2BD 20%, #31CC72 50%, #72D2ED 80%);
+    }
+
+
+
+
+}
+
+.comButton {
+    font-family: auto;
+    border: #4D9DBF 0.5px solid;
+    border-radius: 28px;
+
+}
+
+.ai {
+    width: 115%;
 }

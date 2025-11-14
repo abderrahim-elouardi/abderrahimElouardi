@@ -6,6 +6,7 @@ import { Projet } from '../projet/projet';
 import { CommonModule, NgClass } from '@angular/common';
 import { Education } from '../Entities/Education';
 import { CardEducation } from '../card-education/card-education';
+import { Technologie } from '../Entities/Technologie';
 
 @Component({
   selector: 'app-principallanding-page',
@@ -22,7 +23,11 @@ export class PrincipallandingPage {
   image1 = "myImages/myPhoto1.jpg"
   image2 = "myImages/myPhoto2.jpg"
   cvPath: string = "myImages/ABDERRAHIM EL OUARDI (7).pdf"
-
+  anglais_titre: string = "data Analyst"
+  arabe_nom: string = " عبد الرحيم الوردي"
+  arabe_titre: string = "محلل بيانات"
+  arabe_instroduction: string = "طالب ماجستير في علوم البيانات والأنظمة الذكية، لدي شغف عميق بالذكاء الاصطناعي واستغلال البيانات. إن خبرتي المزدوجة كمطور متكامل (Full Stack Developer) تمنحني القدرة الفريدة على تطبيق حلول الذكاء الاصطناعي بشكل متكامل. أسعى باستمرار لتحويل النظرية إلى تطبيقات عملية وعالية الأداء."
+  anglais_introduction: string = "A Master's student in Data Science and Intelligent Systems, I am deeply passionate about Artificial Intelligence and data exploitation. My dual background as a Full Stack Developer provides me with the unique ability to implement comprehensive AI solutions. I constantly seek to transform theory into concrete, high-performance applications."
 
   config = inject(CongfigurationService)
   data = inject(DataService)
@@ -30,10 +35,23 @@ export class PrincipallandingPage {
 
   projects: ProjetEntite[] = []
   educations: Education[] = []
+  outilTechnologies: Technologie[] = []
+  Languages: Technologie[] = []
+  Database: Technologie[] = []
+  Freamwork: Technologie[] = []
+  AI: Technologie[] = []
+  Tools: Technologie[] = []
+
 
   constructor() {
     this.projects = this.data.projects
     this.educations = this.data.Educations
+    this.Languages = this.data.Languages
+    this.Database = this.data.Database
+    this.Freamwork = this.data.Freamwork
+    this.AI = this.data.AI
+    this.Tools = this.data.Tools
+
   }
 
   basculerEng() {
@@ -49,5 +67,23 @@ export class PrincipallandingPage {
   }
   changeMode() {
     this.config.mode = !this.config.mode
+  }
+
+  basculerLanguages() {
+    this.config.skill = "Languages"
+
+  }
+
+  basculerDatabase() {
+    this.config.skill = "Database"
+  }
+  basculerFreamwork() {
+    this.config.skill = "Freamwork"
+  }
+  basculerAi() {
+    this.config.skill = "AI"
+  }
+  basculerTools() {
+    this.config.skill = "Tools"
   }
 }
