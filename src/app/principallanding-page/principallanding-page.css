@@ -78,6 +78,12 @@ body {
 #image_id1 {
     border-radius: 50% !important;
     width: 322px;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+
+#image_id1:hover {
+    width: 342px;
 }
 
 #row1_id {
@@ -85,6 +91,7 @@ body {
     justify-content: center;
     padding-top: 110px;
     height: 500px;
+    margin-bottom: -115px;
     /* display: flex;
     align-items: center; */
 }
@@ -103,8 +110,14 @@ body {
     border-radius: 50%;
     animation: imgContainer 5s ease-in-out 0s infinite forwards;
     border: #4D9DBF solid 10px;
+    transition-duration: 2s;
+    transition-timing-function: ease;
 
+}
 
+#img-container:hover {
+    width: 365px;
+    height: 365px;
 }
 
 @keyframes imgContainer {
@@ -128,7 +141,7 @@ body {
 
 #containner_id {
     height: 100px;
-    margin-top: -19px;
+    margin-top: -169px;
 }
 
 #salutation-id {
@@ -152,7 +165,17 @@ body {
     justify-content: space-around;
 }
 
-.projet {}
+.projet {
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    border-radius: 19px;
+
+}
+
+.projet:hover {
+    box-shadow: #00b3ff 0px 0px 13px;
+
+}
 
 #cvDiv {
     width: 100%;
@@ -191,7 +214,25 @@ body {
 #education {
     border: solid 3px lightblue;
     border-radius: 10px;
-    background-color: #ffffff;
+
+    background-color: #f0f8ff00;
+    /* display: flex;
+    justify-content: center; */
+
+    transition-duration: 2s;
+    transition-timing-function: ease;
+
+}
+
+#education:hover {
+    border: #00b3ff solid 2px;
+    box-shadow: #00b3ff 0px 0px 10px;
+
+}
+
+
+.marginnnn {
+    margin-top: 130px !important;
 }
 
 #educationParagraphe {

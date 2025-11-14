@@ -19,6 +19,22 @@ export class Projet {
     description: '',
     detail_description: '',
     img: '',
-    technologies: []
+    technologies: [],
+    description_anglais: "",
+    description_arabe: "",
+    titre_anglais: "",
+    titre_arabe: ""
+  }
+
+  estFrancais() {
+    return this.config.longue == "FR"
+  }
+
+  estAnglais() {
+    return this.config.longue == "EN"
+  }
+
+  estArabe() {
+    return this.config.longue == "Ar"
   }
 }

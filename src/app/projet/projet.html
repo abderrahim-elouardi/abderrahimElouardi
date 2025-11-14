@@ -1,5 +1,5 @@
 <div class="card shadow-sm h-100 h-auto" [ngClass]="{'bg-light':!this.config.mode,'cardClassModenuit':this.config.mode}"
-    id="cardId">
+    id="cardId" *ngIf="this.config.longue=='FR'">
     <!-- Image en haut -->
     <img [src]="this.projet.img" [alt]="this.projet.titre" class="card-img-top " id="imgCard">
 
@@ -16,7 +16,82 @@
     </div>
 
     <!-- Bouton d'action -->
+    <div class="card-body pt-0" *ngIf="this.estArabe()">
+        <a class="btn btn-primary w-100">شاهد تفاصيل المشروع</a>
+
+    </div>
+
     <div class="card-body pt-0">
+        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()">See More detail</a>
+    </div>
+
+    <div class="card-body pt-0" *ngIf="this.estFrancais()">
+        <a class="btn btn-primary w-100">Voir le projet en détail</a>
+    </div>
+</div>
+
+
+<div class="card shadow-sm h-100 h-auto" [ngClass]="{'bg-light':!this.config.mode,'cardClassModenuit':this.config.mode}"
+    id="cardId" *ngIf="this.config.longue=='EN'">
+    <!-- Image en haut -->
+    <img [src]="this.projet.img" [alt]="this.projet.titre" class="card-img-top " id="imgCard">
+
+    <!-- Corps de la carte -->
+    <div class="card-body">
+        <!-- Titre du projet -->
+        <h5 class="card-title" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+            {{this.projet.titre_anglais}}</h5>
+
+        <!-- Description du projet -->
+        <p class="card-text" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+            {{this.projet.description_anglais}}
+        </p>
+    </div>
+
+    <!-- Bouton d'action -->
+    <div class="card-body pt-0" *ngIf="this.estArabe()">
+        <a class="btn btn-primary w-100">شاهد تفاصيل المشروع</a>
+
+    </div>
+
+    <div class="card-body pt-0">
+        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()">See More detail</a>
+    </div>
+
+    <div class="card-body pt-0" *ngIf="this.estFrancais()">
+        <a class="btn btn-primary w-100">Voir le projet en détail</a>
+    </div>
+</div>
+
+
+<div class="card shadow-sm h-100 h-auto" [ngClass]="{'bg-light':!this.config.mode,'cardClassModenuit':this.config.mode}"
+    id="cardId" *ngIf="this.config.longue=='Ar'">
+    <!-- Image en haut -->
+    <img [src]="this.projet.img" [alt]="this.projet.titre" class="card-img-top " id="imgCard">
+
+    <!-- Corps de la carte -->
+    <div class="card-body">
+        <!-- Titre du projet -->
+        <h5 class="card-title" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+            {{this.projet.titre_arabe}}</h5>
+
+        <!-- Description du projet -->
+        <p class="card-text" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
+            {{this.projet.description_arabe}}
+        </p>
+    </div>
+
+    <!-- Bouton d'action -->
+    <div class="card-body pt-0" *ngIf="this.estArabe()">
+        <a class="btn btn-primary w-100">شاهد تفاصيل المشروع</a>
+
+    </div>
+
+    <div class="card-body pt-0">
+        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()">See More detail</a>
+    </div>
+
+    <div class="card-body pt-0" *ngIf="this.estFrancais()">
         <a class="btn btn-primary w-100">Voir le projet en détail</a>
     </div>
 </div>

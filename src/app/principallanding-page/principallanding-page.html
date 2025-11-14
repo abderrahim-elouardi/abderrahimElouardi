@@ -46,7 +46,7 @@
                     <a class="nav-link" href="#education"> <i class="bi bi-book-fill"></i> التعليم</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills"> <i class="bi bi-stars"></i> القدرات</a>
+                    <a class="nav-link" href="#skills"> <i class="bi bi-stars"></i> المهارات</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#projectsSection"> <i class="bi bi-trello"></i>المشاريع</a>
@@ -105,13 +105,13 @@
         </div>
     </div>
 </nav>
-<div class="container " id="containner_id">
-    <div class="row mt-3" id="row1_id">
+<div class="container" id="containner_id">
+    <div class="row marginnnn" id="row1_id">
         <div id="img-container" class="">
             <img class="rounded-5" [src]="this.image1" id="image_id1" alt="Ma photo">
         </div>
     </div>
-    <div class="row mt-3 bg-body-primary" id="proposMoi">
+    <div class="row marginnnn bg-body-primary" id="proposMoi">
         <p class="text-center" id="salutation-id" *ngIf="this.config.longue=='FR'"
             [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">salut ! je suis
             {{this.francais_nom}} 👋🏼</p>
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-    <div class="row mt-5 education   mb-5" [ngClass]="{'section':this.config.mode}">
+    <div class="row mt-5 education   marginnnn" [ngClass]="{'section':this.config.mode}">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='FR'">Éducation
         </p>
@@ -177,54 +177,120 @@
             *ngIf="this.config.longue=='Ar'">التعليم
         </p>
 
+        <div style="    width: 100%;
+        display: flex;
+        justify-content: center;
+    height: 10px;
+    margin-top: -20px;">
+            <div style="    width: 91px;
+    background: radial-gradient(circle,rgba(56, 194, 189, 1) 0%, rgba(0, 55, 237, 0.86) 50%, rgba(114, 210, 237, 0.89) 100%);
+    height: 50%;
+    border-radius: 10px;">
+
+            </div>
+        </div>
+
         <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='FR'">Mon
-            parcours académique a établi les fondations techniques et méthodologiques de mon
-            expertise</p>
+            Mon parcours de Master, actuellement en cours, m'a permis de solidifier mes fondations et d'acquérir une
+            expertise poussée dans divers domaines clés de l'informatique, notamment le développement d'applications et
+            l'intelligence artificielle.</p>
 
         <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='Ar'">Mon
-            parcours académique a établi les fondations techniques et méthodologiques de mon
-            expertise</p>
+            مساري في الماجستير، الذي ما زال قيد الإنجاز، مكّنني من ترسيخ أسسي واكتساب خبرة متعمقة في مختلف المجالات
+            الرئيسية لعلوم
+            الحاسوب، لا سيما تطوير التطبيقات والذكاء الاصطناعي.
+        </p>
 
         <p id="educationParagraphe" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='EN'">Mon
-            parcours académique a établi les fondations techniques et méthodologiques de mon
-            expertise</p>
-        <!-- ////////////////////// -->
+            My Master's program, currently underway, has allowed me to solidify my foundation and acquire advanced
+            expertise in various key areas of computer science, particularly application development and artificial
+            intelligence.</p>
         <div class="row educationRow mb-4 ">
             @for (education of this.educations; track education.id) {
-            <div class="col-lg-5 col-md-12 mt-3" id="education">
+            <div class="col-lg-5 col-md-12 mt-3" id="education"
+                [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">
                 <app-card-education [education]="education"></app-card-education>
             </div>
             }
         </div>
     </div>
 
-    <div class="row mt-5 education   mb-5" [ngClass]="{'section':this.config.mode}" id="skills">
-        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Compétences
+    <div class="row mt-5 education marginnnn  mb-5" [ngClass]="{'section':this.config.mode}" id="skills">
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='FR'">Compétences
         </p>
+
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='Ar'">المهارات
+        </p>
+
+        <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
+            *ngIf="this.config.longue=='EN'">skills
+        </p>
+
+        <div style="    width: 100%;
+        display: flex;
+        justify-content: center;
+    height: 10px;
+    margin-top: -20px;">
+            <div style="    width: 70px;
+    background: radial-gradient(circle,rgba(56, 194, 189, 1) 0%, rgba(0, 55, 237, 0.86) 50%, rgba(114, 210, 237, 0.89) 100%);
+    height: 50%;
+    border-radius: 10px;">
+
+            </div>
+        </div>
+
         <div class="row p-4" id="competenceRow">
             <div class="row p-4 d-flex justify-content-around align-items-center">
                 <div class="col-lg-2 ">
                     <button class=" btn  comButton fs-3 "
                         [ngClass]="{'btn-light':this.config.skill!='Languages','btn-primary':this.config.skill=='Languages'}"
-                        (click)="basculerLanguages()">
+                        *ngIf="this.config.longue=='FR'" (click)="basculerLanguages()">
                         Languages
                     </button>
+
+                    <button class=" btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Languages','btn-primary':this.config.skill=='Languages'}"
+                        *ngIf="this.config.longue=='EN'" (click)="basculerLanguages()">
+                        Languages
+                    </button>
+
+                    <button class=" btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Languages','btn-primary':this.config.skill=='Languages'}"
+                        *ngIf="this.config.longue=='Ar'" (click)="basculerLanguages()">
+                        اللغات
+                    </button>
+
+
                 </div>
                 <div class="col-lg-2 ">
                     <button class="btn  comButton fs-3"
                         [ngClass]="{'btn-light':this.config.skill!='Database','btn-primary':this.config.skill=='Database'}"
-                        (click)="basculerDatabase()">
+                        *ngIf="this.config.longue=='FR'||this.config.longue=='EN'" (click)="basculerDatabase()">
                         Database
+                    </button>
+
+                    <button class="btn  comButton fs-3"
+                        [ngClass]="{'btn-light':this.config.skill!='Database','btn-primary':this.config.skill=='Database'}"
+                        *ngIf="this.config.longue=='Ar'" (click)="basculerDatabase()">
+                        قواعد البيانات
                     </button>
                 </div>
                 <div class="col-lg-2 ">
                     <button class="btn  comButton fs-3 "
                         [ngClass]="{'btn-light':this.config.skill!='Freamwork','btn-primary':this.config.skill=='Freamwork'}"
-                        (click)="basculerFreamwork()">
+                        *ngIf="this.config.longue=='FR'||this.config.longue=='EN'" (click)="basculerFreamwork()">
                         Freamwork
+                    </button>
+
+                    <button class="btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Freamwork','btn-primary':this.config.skill=='Freamwork'}"
+                        *ngIf="this.config.longue=='Ar'" (click)="basculerFreamwork()">
+                        أُطُر العمل
                     </button>
                 </div>
                 <div class="col-lg-2 ">
@@ -237,8 +303,13 @@
                 <div class="col-lg-2 ">
                     <button class="btn  comButton fs-3 "
                         [ngClass]="{'btn-light':this.config.skill!='Tools','btn-primary':this.config.skill=='Tools'}"
-                        (click)="basculerTools()">
+                        *ngIf="this.config.longue=='FR'||this.config.longue=='EN'" (click)="basculerTools()">
                         Tools
+                    </button>
+                    <button class="btn  comButton fs-3 "
+                        [ngClass]="{'btn-light':this.config.skill!='Tools','btn-primary':this.config.skill=='Tools'}"
+                        *ngIf="this.config.longue=='Ar'" (click)="basculerTools()">
+                        أدوات
                     </button>
                 </div>
 
@@ -291,7 +362,7 @@
         </div>
     </div>
 
-    <div class="row mt-5 pb-4 h-auto" id="projectsSection" [ngClass]="{'section':this.config.mode}">
+    <div class="row marginnnn pb-4 h-auto" id="projectsSection" [ngClass]="{'section':this.config.mode}">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}">Mes
             Projets
         </p>
@@ -302,7 +373,7 @@
         }
 
     </div>
-    <footer class="bg-dark text-white py-5" id="contact">
+    <footer class="bg-dark text-white py-5 " id="contact">
         <div class="container">
             <div class="row g-4">
 
@@ -334,24 +405,26 @@
                 <div class="col-md-6">
                     <h5 class="fw-bold mb-4">Contact Me</h5>
 
-                    <form id="contactForm" action="https://formspree.io/f/xananygp" method="POST">
-                        <!-- Name Input -->
+                    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name"
+                                [(ngModel)]="model.name" required>
                         </div>
 
-                        <!-- Email Input -->
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email">
+                            <input type="email" class="form-control" placeholder="Your Email" name="email"
+                                [(ngModel)]="model.email" required>
                         </div>
 
-                        <!-- Message Textarea -->
                         <div class="mb-3">
-                            <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
+                            <textarea class="form-control" rows="3" placeholder="Your Message" name="message"
+                                [(ngModel)]="model.message" required></textarea>
                         </div>
 
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">
+                            Send Message
+                        </button>
                     </form>
                 </div>
 

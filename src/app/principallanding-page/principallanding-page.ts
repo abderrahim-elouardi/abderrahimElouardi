@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CongfigurationService } from '../configuration/congfiguration-service';
 import { DataService } from '../dataService/data-service';
 import { ProjetEntite } from '../Entities/ProjetEntite';
@@ -7,15 +7,24 @@ import { CommonModule, NgClass } from '@angular/common';
 import { Education } from '../Entities/Education';
 import { CardEducation } from '../card-education/card-education';
 import { Technologie } from '../Entities/Technologie';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, NgForm } from '@angular/forms';
+
+// Interface pour définir la structure de vos données
+interface ContactForm {
+  name?: string;
+  email?: string;
+  message?: string;
+}
 
 @Component({
   selector: 'app-principallanding-page',
-  imports: [CommonModule, NgClass, Projet, CardEducation],
+  imports: [CommonModule, NgClass, Projet, CardEducation, FormsModule, HttpClientModule],
   standalone: true,
   templateUrl: './principallanding-page.html',
   styleUrl: './principallanding-page.css',
 })
-export class PrincipallandingPage {
+export class PrincipallandingPage implements OnInit {
   francais_nom: string = "Abderrahim El Ouardi"
   francais_titre = "Data Scientist et AI Engineur"
   francais_introduction = "Étudiant en Master en Sciences des Données et Systèmes Intelligents, je suis profondément passionné par l'Intelligence Artificielle et l'exploitation des données. Ma double casquette de Développeur Full Stack me confère la capacité unique d'implémenter des solutions d'IA complètes. Je cherche constamment à transformer la théorie en applications concrètes et performantes."
@@ -43,7 +52,7 @@ export class PrincipallandingPage {
   Tools: Technologie[] = []
 
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.projects = this.data.projects
     this.educations = this.data.Educations
     this.Languages = this.data.Languages
@@ -76,6 +85,7 @@ export class PrincipallandingPage {
 
   basculerDatabase() {
     this.config.skill = "Database"
+    alert(this.config.skill)
   }
   basculerFreamwork() {
     this.config.skill = "Freamwork"
@@ -85,5 +95,49 @@ export class PrincipallandingPage {
   }
   basculerTools() {
     this.config.skill = "Tools"
+  }
+
+
+
+  // 🚨 REMPLACEZ PAR VOTRE VRAI ENDPOINT FORMSPREE
+  readonly CONTACT_URL = 'https://formspree.io/f/xananygp';
+
+  // Modèle pour stocker les données du formulaire
+  model: ContactForm = {};
+
+  // Indicateurs pour l'état du formulaire
+  isSubmitted = false;
+  isError = false;
+
+  ngOnInit(): void {
+  }
+
+  onSubmit(form: NgForm): void {
+    // Si le formulaire n'est pas valide, on arrête
+    if (form.invalid) {
+      return;
+    }
+
+    this.isSubmitted = true;
+    this.isError = false;
+
+    // Envoi des données en POST (HttpClient envoie automatiquement en JSON)
+    this.http.post(this.CONTACT_URL, this.model)
+      .subscribe({
+        next: (response) => {
+          // Gérer le succès (peut-être afficher un message ou réinitialiser)
+          console.log('Message envoyé !', response);
+          alert('Votre message a été envoyé avec succès !');
+          form.resetForm(); // Réinitialiser les champs du formulaire
+          this.isSubmitted = false;
+        },
+        error: (error) => {
+          // Gérer l'échec
+          console.error('Erreur lors de l\'envoi:', error);
+          this.isError = true;
+          this.isSubmitted = false;
+          alert('Erreur: Le message n\'a pas pu être envoyé.');
+        }
+      });
   }
 }
