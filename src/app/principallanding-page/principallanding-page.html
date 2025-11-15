@@ -1,11 +1,23 @@
 <nav class="navbar navbar-expand-lg position-fixed" id="navbar_id">
     <div class="container-fluid">
         <!-- Brand -->
-        <a class="navbar-brand" href="#" *ngIf="this.config.longue=='FR'||this.config.longue=='EN'">
-            <i class="bi bi-briefcase"></i> Abderrahim El Ouardi
+        <a class="navbar-brand" href="#"
+            *ngIf="(this.config.longue=='FR'||this.config.longue=='EN')&&!this.config.mode">
+            <img src="myImages/logo2-removebg-preview.png" class="logo">
+            Abderrahim El Ouardi
         </a>
-        <a class="navbar-brand" href="#" *ngIf="this.config.longue=='Ar'">
-            <i class="bi bi-briefcase"></i> عبد الرحيم الوردي
+        <a class="navbar-brand" href="#" *ngIf="this.config.longue=='Ar'&&!this.config.mode">
+            <img src="myImages/logo2-removebg-preview.png" class="logo">
+            عبد الرحيم الوردي
+        </a>
+
+        <a class="navbar-brand" href="#" *ngIf="(this.config.longue=='FR'||this.config.longue=='EN')&&this.config.mode">
+            <img src="myImages\logonuit-removebg-preview.png" class="logo">
+            Abderrahim El Ouardi
+        </a>
+        <a class="navbar-brand" href="#" *ngIf="this.config.longue=='Ar'&&this.config.mode">
+            <img src="myImages\logonuit-removebg-preview.png" class="logo">
+            عبد الرحيم الوردي
         </a>
 
         <!-- Toggler for mobile -->
@@ -98,7 +110,7 @@
 
                 <!-- Theme toggle button -->
                 <button class="btn btn-outline-secondary theme-toggle" id="themeToggle" title="Mode nuit"
-                    (click)="this.changeMode()">
+                    [ngClass]="{'active':this.config.mode}" (click)="this.changeMode()">
                     <i class="bi bi-moon-stars"></i>
                 </button>
             </div>
@@ -141,18 +153,18 @@
         <div id="cvDiv">
             <div>
                 <button type="button" class="btn btn-info" *ngIf="this.config.longue=='FR'">
-                    Contacter Moi
+                    <a href="#contact" style="text-decoration: none;">Contacter Moi</a>
                     <i class="bi bi-arrow-bar-right"></i>
                 </button>
 
                 <button type="button" class="btn btn-info" *ngIf="this.config.longue=='EN'">
-                    Contact Me
+                    <a href="#contact" style="text-decoration: none;">Contact Me </a>
                     <i class="bi bi-arrow-bar-right"></i>
                 </button>
 
                 <button type="button" class="btn btn-info" *ngIf="this.config.longue=='Ar'">
-                    تواصل معي
-                    <i class="bi bi-arrow-bar-right"></i>
+                    <a href="#contact" style="text-decoration: none;"> تواصل معي
+                    </a> <i class="bi bi-arrow-bar-right"></i>
                 </button>
                 <button type="button" class="btn btn-warning">
                     <a href="CV.pdf" download="ABDERRAHIM EL OUARDI" style="text-decoration: none;">
@@ -164,7 +176,7 @@
         </div>
     </div>
 
-    <div class="row mt-5 education   marginnnn" [ngClass]="{'section':this.config.mode}">
+    <div class="row mt-5 education   marginnnn">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='FR'">Éducation
         </p>
@@ -218,7 +230,7 @@
         </div>
     </div>
 
-    <div class="row mt-5 education marginnnn  mb-5" [ngClass]="{'section':this.config.mode}" id="skills">
+    <div class="row mt-5 education marginnnn  mb-5" id="skills">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='FR'">Compétences
         </p>
@@ -246,7 +258,7 @@
 
         <div class="row p-4" id="competenceRow">
             <div class="row p-4 d-flex justify-content-around align-items-center">
-                <div class="col-lg-2 ">
+                <div class="col-lg-2 col-md-3 col-sm-5">
                     <button class=" btn  comButton fs-3 "
                         [ngClass]="{'btn-light':this.config.skill!='Languages','btn-primary':this.config.skill=='Languages'}"
                         *ngIf="this.config.longue=='FR'" (click)="basculerLanguages()">
@@ -267,7 +279,7 @@
 
 
                 </div>
-                <div class="col-lg-2 ">
+                <div class="col-lg-2 col-md-3 col-sm-5">
                     <button class="btn  comButton fs-3"
                         [ngClass]="{'btn-light':this.config.skill!='Database','btn-primary':this.config.skill=='Database'}"
                         *ngIf="this.config.longue=='FR'||this.config.longue=='EN'" (click)="basculerDatabase()">
@@ -280,7 +292,7 @@
                         قواعد البيانات
                     </button>
                 </div>
-                <div class="col-lg-2 ">
+                <div class="col-lg-2 col-md-3 col-sm-5">
                     <button class="btn  comButton fs-3 "
                         [ngClass]="{'btn-light':this.config.skill!='Freamwork','btn-primary':this.config.skill=='Freamwork'}"
                         *ngIf="this.config.longue=='FR'||this.config.longue=='EN'" (click)="basculerFreamwork()">
@@ -293,14 +305,14 @@
                         أُطُر العمل
                     </button>
                 </div>
-                <div class="col-lg-2 ">
+                <div class="col-lg-2 col-md-3 col-sm-5">
                     <button class="btn ai comButton fs-3"
                         [ngClass]="{'btn-light':this.config.skill!='AI','btn-primary':this.config.skill=='AI'}"
                         (click)="basculerAi()">
                         AI
                     </button>
                 </div>
-                <div class="col-lg-2 ">
+                <div class="col-lg-2 col-md-3 col-sm-5">
                     <button class="btn  comButton fs-3 "
                         [ngClass]="{'btn-light':this.config.skill!='Tools','btn-primary':this.config.skill=='Tools'}"
                         *ngIf="this.config.longue=='FR'||this.config.longue=='EN'" (click)="basculerTools()">
@@ -362,7 +374,7 @@
         </div>
     </div>
 
-    <div class="row marginnnn pb-4 h-auto" id="projectsSection" [ngClass]="{'section':this.config.mode}">
+    <div class="row marginnnn pb-4 h-auto" id="projectsSection">
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='FR'">Mes
             Projets
@@ -375,6 +387,21 @@
         <p id="titreSecondSection" [ngClass]="{'text-light':this.config.mode,'text-dark':!this.config.mode}"
             *ngIf="this.config.longue=='Ar'">مشاريعي
         </p>
+
+
+        <div style="    width: 100%;
+        display: flex;
+        justify-content: center;
+    height: 10px;
+    margin-top: -20px;">
+            <div style="    width: 91px;
+    background: radial-gradient(circle,rgba(56, 194, 189, 1) 0%, rgba(0, 55, 237, 0.86) 50%, rgba(114, 210, 237, 0.89) 100%);
+    height: 50%;
+    border-radius: 10px;">
+
+            </div>
+        </div>
+
         @for (projet of this.projects ; track projet.id ) {
         <div class="col-lg-5 col-md-5 projet mt-5">
             <app-projet [projet]=" projet"></app-projet>
@@ -382,7 +409,8 @@
         }
 
     </div>
-    <footer class="bg-dark text-white py-5 " id="contact">
+    <footer class="wh text-white py-5 mt-5" [ngClass]="{'bg-dark':this.config.mode,'bg-secondary':!this.config.mode}"
+        id="contact">
         <div class="container">
             <div class="row g-4">
 

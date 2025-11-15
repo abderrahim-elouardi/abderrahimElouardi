@@ -26,17 +26,17 @@ interface ContactForm {
 })
 export class PrincipallandingPage implements OnInit {
   francais_nom: string = "Abderrahim El Ouardi"
-  francais_titre = "Data Scientist et AI Engineur"
-  francais_introduction = "Étudiant en Master en Sciences des Données et Systèmes Intelligents, je suis profondément passionné par l'Intelligence Artificielle et l'exploitation des données. Ma double casquette de Développeur Full Stack me confère la capacité unique d'implémenter des solutions d'IA complètes. Je cherche constamment à transformer la théorie en applications concrètes et performantes."
+  francais_titre = "Étudiant en science des données"
+  francais_introduction = "Étudiant en Master en Web intelligence et science de donnees, je suis profondément passionné par l'Intelligence Artificielle et l'exploitation des données. Ma double casquette de Développeur Full Stack me confère la capacité unique d'implémenter des solutions d'IA complètes. Je cherche constamment à transformer la théorie en applications concrètes et performantes."
   francais_introduction_Detaille = "je me présente, je suis un étudiant en Master en Sciences des Données et Systèmes Intelligents, un domaine qui se trouve au cœur de la révolution technologique actuelle.Ma passion pour la Science des Données et l'Intelligence Artificielle n'est pas seulement académique : elle est le moteur de mon parcours et de mes projets. J'ai un profond intérêt pour la manière dont nous pouvons extraire des connaissances significatives à partir de données complexes et pour le développement de modèles d'IA capables de transformer des industries.En parallèle de ma spécialisation en IA, je possède également une solide expertise en tant que Développeur Full Stack. Cette double compétence me permet non seulement de concevoir et d'entraîner des modèles sophistiqués, mais aussi de les intégrer de manière fluide dans des applications web ou des systèmes prêts à l'emploi. Je suis capable de gérer un projet de bout en bout, de la collecte et l'analyse des données (Back-end) à l'interface utilisateur intuitive (Front-end)."
   image1 = "myImages/myPhoto1.jpg"
   image2 = "myImages/myPhoto2.jpg"
   cvPath: string = "myImages/ABDERRAHIM EL OUARDI (7).pdf"
-  anglais_titre: string = "data Analyst"
+  anglais_titre: string = "Student in Data Science"
   arabe_nom: string = " عبد الرحيم الوردي"
-  arabe_titre: string = "محلل بيانات"
-  arabe_instroduction: string = "طالب ماجستير في علوم البيانات والأنظمة الذكية، لدي شغف عميق بالذكاء الاصطناعي واستغلال البيانات. إن خبرتي المزدوجة كمطور متكامل (Full Stack Developer) تمنحني القدرة الفريدة على تطبيق حلول الذكاء الاصطناعي بشكل متكامل. أسعى باستمرار لتحويل النظرية إلى تطبيقات عملية وعالية الأداء."
-  anglais_introduction: string = "A Master's student in Data Science and Intelligent Systems, I am deeply passionate about Artificial Intelligence and data exploitation. My dual background as a Full Stack Developer provides me with the unique ability to implement comprehensive AI solutions. I constantly seek to transform theory into concrete, high-performance applications."
+  arabe_titre: string = "طالب في تخصص علوم البيانات"
+  arabe_instroduction: string = "طالب ماجستير في ذكاء الويب وعلوم البيانات، أنا شغوف جدًا بالذكاء الاصطناعي واستغلال البيانات. تمنحني خلفيتي المزدوجة كمطور شامل (Full Stack Developer) القدرة الفريدة على تنفيذ حلول الذكاء الاصطناعي الشاملة. أسعى باستمرار لتحويل النظرية إلى تطبيقات ملموسة وعالية الأداء."
+  anglais_introduction: string = "A Master's student in Web Intelligence and Data Science, I am deeply passionate about Artificial Intelligence and data exploitation. My dual background as a Full Stack Developer provides me with the unique ability to implement comprehensive AI solutions. I constantly seek to transform theory into concrete, high-performance applications."
 
   config = inject(CongfigurationService)
   data = inject(DataService)

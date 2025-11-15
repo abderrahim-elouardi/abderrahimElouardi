@@ -23,7 +23,8 @@ export class Projet {
     description_anglais: "",
     description_arabe: "",
     titre_anglais: "",
-    titre_arabe: ""
+    titre_arabe: "",
+    link_detail: ""
   }
 
   estFrancais() {

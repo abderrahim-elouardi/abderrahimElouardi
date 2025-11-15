@@ -13,4 +13,5 @@ export class ProjetEntite {
     detail_description: string = ""
     technologies: Technologie[] = []
     acteurs: Acteur[] = []
+    link_detail: string = ""
 } 

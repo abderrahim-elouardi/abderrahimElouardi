@@ -32,7 +32,8 @@ export class DataService {
         description: "Admin pour organiser les Managers"
       }
       ],
-      technologies: []
+      technologies: [],
+      link_detail: "https://www.linkedin.com/posts/abderrahimelouardi_pfe-soutenance-springboot-ugcPost-7332840468512178178-Ym9U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmFxoQBgtxROtLl0wzQcJz-SwQ5SI9Spec"
     },
     {
       id: 1,
@@ -57,7 +58,8 @@ export class DataService {
         description: "Admin pour organiser les Managers"
       }
       ],
-      technologies: []
+      technologies: [],
+      link_detail: "https://www.linkedin.com/posts/abderrahimelouardi_machinelearning-fastapi-springboot-ugcPost-7375510421752934400-vfLl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmFxoQBgtxROtLl0wzQcJz-SwQ5SI9Spec"
     },
     {
       id: 2,
@@ -70,7 +72,8 @@ export class DataService {
       description_arabe: "مشروع لتحليل البيانات على مجموعة بيانات بنكية، متضمناً الاستكشاف والمعالجة المسبقة (التطبيع/Normalization، ترميز One-Hot Encoding). تم تطبيق خوارزمية K-Means لتجزئة العملاء، مما أسفر عن مجموعات مميزة بناءً على الخصائص، لاستخدامها في استراتيجيات تجارية مستهدفة",
       detail_description: "",
       acteurs: [],
-      technologies: []
+      technologies: [],
+      link_detail: "https://www.linkedin.com/posts/abderrahimelouardi_datamining-machinelearning-kmeans-ugcPost-7391530114041196544-LoNA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmFxoQBgtxROtLl0wzQcJz-SwQ5SI9Spec"
     }
   ]
 

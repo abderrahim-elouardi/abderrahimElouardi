@@ -17,16 +17,16 @@
 
     <!-- Bouton d'action -->
     <div class="card-body pt-0" *ngIf="this.estArabe()">
-        <a class="btn btn-primary w-100">شاهد تفاصيل المشروع</a>
+        <a class="btn btn-primary w-100" [href]="this.projet.link_detail">شاهد تفاصيل المشروع</a>
 
     </div>
 
     <div class="card-body pt-0">
-        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()">See More detail</a>
+        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()" [href]="this.projet.link_detail">See More detail</a>
     </div>
 
     <div class="card-body pt-0" *ngIf="this.estFrancais()">
-        <a class="btn btn-primary w-100">Voir le projet en détail</a>
+        <a class="btn btn-primary w-100" [href]="this.projet.link_detail">Voir le projet en détail</a>
     </div>
 </div>
 
@@ -50,16 +50,16 @@
 
     <!-- Bouton d'action -->
     <div class="card-body pt-0" *ngIf="this.estArabe()">
-        <a class="btn btn-primary w-100">شاهد تفاصيل المشروع</a>
+        <a class="btn btn-primary w-100" [href]="this.projet.link_detail">شاهد تفاصيل المشروع</a>
 
     </div>
 
     <div class="card-body pt-0">
-        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()">See More detail</a>
+        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()" [href]="this.projet.link_detail">See More detail</a>
     </div>
 
     <div class="card-body pt-0" *ngIf="this.estFrancais()">
-        <a class="btn btn-primary w-100">Voir le projet en détail</a>
+        <a class="btn btn-primary w-100" [href]="this.projet.link_detail">Voir le projet en détail</a>
     </div>
 </div>
 
@@ -83,15 +83,15 @@
 
     <!-- Bouton d'action -->
     <div class="card-body pt-0" *ngIf="this.estArabe()">
-        <a class="btn btn-primary w-100">شاهد تفاصيل المشروع</a>
+        <a class="btn btn-primary w-100" [href]="this.projet.link_detail">شاهد تفاصيل المشروع</a>
 
     </div>
 
     <div class="card-body pt-0">
-        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()">See More detail</a>
+        <a class="btn btn-primary w-100" *ngIf="this.estAnglais()" [href]="this.projet.link_detail">See More detail</a>
     </div>
 
     <div class="card-body pt-0" *ngIf="this.estFrancais()">
-        <a class="btn btn-primary w-100">Voir le projet en détail</a>
+        <a class="btn btn-primary w-100" [href]="this.projet.link_detail">Voir le projet en détail</a>
     </div>
 </div>
