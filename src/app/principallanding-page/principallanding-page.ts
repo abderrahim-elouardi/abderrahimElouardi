@@ -85,7 +85,6 @@ export class PrincipallandingPage implements OnInit {
 
   basculerDatabase() {
     this.config.skill = "Database"
-    alert(this.config.skill)
   }
   basculerFreamwork() {
     this.config.skill = "Freamwork"
